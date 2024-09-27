@@ -1,0 +1,10 @@
+[package]
+name = "tensor-bench"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+candle-core = { path = "/Users/anubhab/code/anubhab/candle/candle-core", version = "0", features = ["metal"] }
+
+[dev.dependencies]
+criterion = "0"
