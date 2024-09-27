@@ -4,7 +4,10 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-candle-core = { path = "/Users/anubhab/code/anubhab/candle/candle-core", version = "0", features = ["metal"] }
-
-[dev.dependencies]
+candle-core = { git = "https://github.com/huggingface/candle.git", version = "0", features = ["metal"] }
+candle-core-opt = { git = "https://github.com/anubhabb/candle.git", branch = "ones-impl", features = ["metal"], package = "candle-core" }
 criterion = "0"
+
+[[bench]]
+name = "bench_main"
+harness = false
