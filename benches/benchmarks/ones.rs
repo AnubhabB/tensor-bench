@@ -59,20 +59,20 @@ fn run_ones_opt(c: &mut Criterion, device: &DeviceOpt, dtype: DTypeOpt, name: &s
 
 fn criterion_benchmark(c: &mut Criterion) {
     for d in [Device::Cpu, Device::new_metal(0).unwrap()] {
-        // run_ones_orig(c, &d, DType::F32, "orig_ones_f32");
-        // run_ones_orig(c, &d, DType::BF16, "orig_ones_bf16");
-        // run_ones_orig(c, &d, DType::U32, "orig_ones_u32");
-        // run_ones_orig(c, &d, DType::F16, "orig_ones_f16"); // F16 fails for Metal
-        // run_ones_orig(c, &d, DType::U8, "orig_ones_u8"); // u8 Fails for metal??
+        run_ones_orig(c, &d, DType::F32, "orig_ones_f32");
+        run_ones_orig(c, &d, DType::BF16, "orig_ones_bf16");
+        run_ones_orig(c, &d, DType::U32, "orig_ones_u32");
+        run_ones_orig(c, &d, DType::F16, "orig_ones_f16");
+        run_ones_orig(c, &d, DType::U8, "orig_ones_u8");
         run_ones_orig(c, &d, DType::I64, "orig_ones_i64");
     }
 
     let d = DeviceOpt::new_metal(0).unwrap();
-    // run_ones_opt(c, &d, DTypeOpt::F32, "opt_ones_f32");
-    // run_ones_opt(c, &d, DTypeOpt::BF16, "opt_ones_bf16");
-    // run_ones_opt(c, &d, DTypeOpt::U32, "opt_ones_u32");
-    // run_ones_opt(c, &d, DTypeOpt::F16, "opt_ones_f16");
-    // run_ones_opt(c, &d, DTypeOpt::U8, "opt_ones_u8");
+    run_ones_opt(c, &d, DTypeOpt::F32, "opt_ones_f32");
+    run_ones_opt(c, &d, DTypeOpt::BF16, "opt_ones_bf16");
+    run_ones_opt(c, &d, DTypeOpt::U32, "opt_ones_u32");
+    run_ones_opt(c, &d, DTypeOpt::F16, "opt_ones_f16");
+    run_ones_opt(c, &d, DTypeOpt::U8, "opt_ones_u8");
     run_ones_opt(c, &d, DTypeOpt::I64, "opt_ones_i64");
 }
 
