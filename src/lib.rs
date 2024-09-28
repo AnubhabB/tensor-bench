@@ -16,8 +16,9 @@ pub fn select_device() -> Result<Device, String> {
     }
 }
 
-pub fn simple_timer(f: fn() -> ()) -> f32 {
+pub fn simple_timer(dev: &Device, f: fn(d: &Device) -> ()) -> f32 {
     let s = Instant::now();
-    f();
+    f(dev);
+    dev.synchronize().unwrap();
     (Instant::now() - s).as_secs_f32()
 }
