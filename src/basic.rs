@@ -1,4 +1,5 @@
-use candle_core::{DType, Device, Tensor};
+// use candle_core::{DType, Device, Tensor};
+use candle_core_opt::{DType, Device, Tensor};
 
 const N: usize = 64;
 

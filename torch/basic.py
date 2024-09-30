@@ -24,10 +24,10 @@ def create_full_gpu():
 
 
 ctg = simple_timer(create_zero_gpu, GPU)
-print(f"Zeroes: {ctg}s {ctg / 10000}s/iter")
+print(f"Zeroes: {ctg}s {ctg / N}s/iter")
 
 ctg = simple_timer(create_ones_gpu, GPU)
-print(f"Ones: {ctg}s {ctg / 10000}s/iter")
+print(f"Ones: {ctg}s {ctg / N}s/iter")
 
 ctg = simple_timer(create_full_gpu, GPU)
-print(f"Full: {ctg}s {ctg / 10000}s/iter")
+print(f"Full: {ctg}s {ctg / N}s/iter")
