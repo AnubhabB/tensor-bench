@@ -1,8 +1,12 @@
 use std::time::Instant;
 
-use candle_core::{utils::{cuda_is_available, metal_is_available}, Device};
+use candle_core::{
+    utils::{cuda_is_available, metal_is_available},
+    Device,
+};
 
 mod basic;
+pub mod stella_num;
 
 pub use basic::*;
 

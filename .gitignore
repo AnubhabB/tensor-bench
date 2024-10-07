@@ -1,2 +1,8 @@
 /target
 __pycache__
+src/stella_num/stella-cache/*
+!src/stella_num/stella-cache/.empty
+*.safetensors
+*.bin
+config.json
+merges.txt
